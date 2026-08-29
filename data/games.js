@@ -1,0 +1,32 @@
+const games = [
+    {
+        name: "Logistics Empire",
+        slug: "logistics-empire",
+        active: true,
+        sortOrder: 1,
+        downloadReady: false,
+        alphaOpen: false,
+        betaOpen: false,
+        steamAppId: null,
+    },
+    {
+        name: "Alcertha",
+        slug: "alcertha",
+        active: true,
+        sortOrder: 2,
+        downloadReady: false,
+        alphaOpen: false,
+        betaOpen: false,
+        steamAppId: null,
+    },
+    {
+        name: "Placeholder 1",
+        slug: "placeholder-1",
+        active: false,
+        sortOrder: 3,
+        downloadReady: false,
+        alphaOpen: false,
+        betaOpen: false,
+        steamAppId: null,
+    },
+];

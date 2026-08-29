@@ -1,0 +1,232 @@
+body {
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #0d0d0d);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.banner {
+    width: 100%;
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #000000;
+    border-bottom: 2px solid #2e7d32;
+    position: relative;
+}
+
+.banner h1 {
+    color: #4caf50;
+    font-size: 3rem;
+    margin: 0;
+    text-shadow: 4px 4px 12px #ff0000;
+}
+
+.banner p {
+    color: #4caf50;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    text-shadow: 2px 2px 8px #ff0000;
+}
+
+.banner-home-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.steam-dev-link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #4caf50;
+    text-decoration: none;
+    border: 1px solid #4caf50;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.steam-dev-link:hover {
+    background-color: #1a1a1a;
+}
+
+.sub-banner {
+    width: 100%;
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #000000;
+    border-bottom: 2px solid #2e7d32;
+}
+
+.sub-banner h1 {
+    color: #4caf50;
+    font-size: 2rem;
+    margin: 0;
+    text-shadow: 3px 3px 8px #ff0000;
+}
+
+#games-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.game-card {
+    background-color: #000000;
+    border: 1px solid #2e7d32;
+    border-radius: 8px;
+    width: 280px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+}
+
+.game-card .card-image-placeholder {
+    width: 100%;
+    height: 160px;
+    background-color: #1a1a1a;
+}
+
+.game-card h2 {
+    color: #4caf50;
+    text-align: center;
+    padding: 15px;
+    margin: 0;
+}
+
+.game-hero {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image-placeholder {
+    width: 100%;
+    max-width: 800px;
+    height: 300px;
+    background-color: #1a1a1a;
+    border: 1px solid #2e7d32;
+    border-radius: 8px;
+}
+
+.game-description {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #cccccc;
+    text-align: center;
+}
+
+.game-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.gallery-image-placeholder {
+    width: 220px;
+    height: 140px;
+    background-color: #1a1a1a;
+    border: 1px solid #2e7d32;
+    border-radius: 8px;
+}
+
+.game-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 30px 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #000000;
+    color: #4caf50;
+    border: 1px solid #4caf50;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.game-devlog {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 20px 60px;
+    color: #cccccc;
+    text-align: center;
+}
+
+.game-devlog h2 {
+    color: #4caf50;
+}
+
+.game-devlog a {
+    color: #4caf50;
+}
+
+.devlog-archive {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.devlog-entry {
+    border: 1px solid #2e7d32;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.devlog-entry-header {
+    width: 100%;
+    text-align: left;
+    background-color: #000000;
+    color: #4caf50;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.devlog-entry-header:hover {
+    background-color: #1a1a1a;
+}
+
+.devlog-entry-body {
+    background-color: #0d0d0d;
+    color: #cccccc;
+    padding: 20px;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+}
+
+.about-link {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #4caf50;
+    text-decoration: none;
+    border: 1px solid #4caf50;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.about-link:hover {
+    background-color: #1a1a1a;
+}
