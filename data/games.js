@@ -29,14 +29,4 @@ const games = [
         betaOpen: false,
         steamAppId: null,
     },
-    {
-        name: "Placeholder 1",
-        slug: "placeholder-1",
-        active: false,
-        sortOrder: 4,
-        downloadReady: false,
-        alphaOpen: false,
-        betaOpen: false,
-        steamAppId: null,
-    },
 ];
