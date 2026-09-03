@@ -32,9 +32,9 @@ const games = [
         slug: "strataforge-idle",
         active: true,
         sortOrder: 1,
-        downloadReady: false,
-        alphaOpen: false,
+        downloadReady: true,
+        alphaOpen: true,
         betaOpen: false,
-        steamAppId: null,
+        steamAppId: 00000,
     },
 ];
