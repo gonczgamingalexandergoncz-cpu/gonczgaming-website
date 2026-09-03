@@ -3,19 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Alcertha - Goncz Gaming</title>
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@400;500;700&family=Barlow:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header class="banner">
-        <a href="../about.html" class="about-link">About</a>
-        <a href="#" class="steam-dev-link">Steam Developer Page</a>
-        <h1><a href="../index.html" class="banner-home-link">Goncz Gaming</a></h1>
-        <p>Developing games for a hobby</p>
+        <nav class="banner-nav">
+            <a href="../about.html" class="about-link">About</a>
+            <a href="#" class="steam-dev-link">Steam Developer Page</a>
+            <a href="../donate.html" class="donate-nav-link">Donate</a>
+        </nav>
+        <a href="../index.html" class="banner-home-link">
+            <img class="banner-logo" src="../assets/logo-wordmark.png" alt="Goncz Gaming — developing games for a hobby">
+        </a>
     </header>
 
     <header class="sub-banner">
         <h1>Alcertha</h1>
     </header>
+
+    <section class="dev-disclaimer">
+        <p><strong>Development Disclaimer:</strong> I am a solo developer doing this as a hobby, so updates and development will most likely be slow</p>
+    </section>
 
     <section class="game-hero">
         <div class="hero-image-placeholder"></div>
@@ -33,10 +45,56 @@
 
     <section class="game-buttons">
         <a href="#" class="btn btn-download">Download Prototype</a>
-        <a href="#" class="btn btn-alpha">Alpha Signup</a>
-        <a href="#" class="btn btn-beta">Beta Signup</a>
         <a href="#" class="btn btn-steam">Wishlist on Steam</a>
-        <a href="#" class="btn btn-donate">Donate</a>
+    </section>
+
+
+    <section class="signup-forms">
+        <form class="signup-form form-alpha" method="POST" novalidate>
+            <h2>Alpha Signup</h2>
+            <p class="signup-note">Early, rough builds. Expect bugs, expect things to change, and expect to be asked what you think.</p>
+            <input type="hidden" name="accessKey" value="">
+            <input type="hidden" name="game" value="">
+            <input type="hidden" name="stage" value="alpha">
+            <input type="hidden" name="subject" value="">
+            <input type="text" name="honeypot" value="" tabindex="-1" autocomplete="off" aria-hidden="true" class="signup-honeypot">
+            <label for="alpha-name">Name or username <span class="req">(required)</span></label>
+            <input class="signup-input" id="alpha-name" type="text" name="name" required autocomplete="name" placeholder="What should I call you?">
+            <label for="alpha-email">Email address <span class="req">(required)</span></label>
+            <input class="signup-input" id="alpha-email" type="email" name="email" required autocomplete="email" placeholder="you@example.com">
+            <label for="alpha-reason">Why you're interested <span class="req">(optional)</span></label>
+            <textarea class="signup-input signup-textarea" id="alpha-reason" name="reason" rows="3" placeholder="Anything you want me to know."></textarea>
+            <fieldset class="signup-choice">
+                <legend>Can I send you news/updates via email? <span class="req">(required)</span></legend>
+                <label class="signup-radio"><input type="radio" name="emailOptIn" value="Yes" required> Yes</label>
+                <label class="signup-radio"><input type="radio" name="emailOptIn" value="No"> No</label>
+            </fieldset>
+            <button type="submit" class="btn">Join the Alpha</button>
+            <p class="signup-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <form class="signup-form form-beta" method="POST" novalidate>
+            <h2>Beta Signup</h2>
+            <p class="signup-note">Later builds, closer to finished. Fewer rough edges, still plenty to test.</p>
+            <input type="hidden" name="accessKey" value="">
+            <input type="hidden" name="game" value="">
+            <input type="hidden" name="stage" value="beta">
+            <input type="hidden" name="subject" value="">
+            <input type="text" name="honeypot" value="" tabindex="-1" autocomplete="off" aria-hidden="true" class="signup-honeypot">
+            <label for="beta-name">Name or username <span class="req">(required)</span></label>
+            <input class="signup-input" id="beta-name" type="text" name="name" required autocomplete="name" placeholder="What should I call you?">
+            <label for="beta-email">Email address <span class="req">(required)</span></label>
+            <input class="signup-input" id="beta-email" type="email" name="email" required autocomplete="email" placeholder="you@example.com">
+            <label for="beta-reason">Why you're interested <span class="req">(optional)</span></label>
+            <textarea class="signup-input signup-textarea" id="beta-reason" name="reason" rows="3" placeholder="Anything you want me to know."></textarea>
+            <fieldset class="signup-choice">
+                <legend>Can I send you news/updates via email? <span class="req">(required)</span></legend>
+                <label class="signup-radio"><input type="radio" name="emailOptIn" value="Yes" required> Yes</label>
+                <label class="signup-radio"><input type="radio" name="emailOptIn" value="No"> No</label>
+            </fieldset>
+            <button type="submit" class="btn">Join the Beta</button>
+            <p class="signup-status" role="status" aria-live="polite"></p>
+        </form>
     </section>
 
     <section class="game-devlog">
@@ -44,6 +102,21 @@
         <div id="latest-devlog"></div>
         <a href="../devlogs/alcertha/archive.html">View Full Devlog Archive</a>
     </section>
+
+    <section class="more-images">
+        <h2>More Images</h2>
+        <div class="more-images-grid">
+            <div class="gallery-image-placeholder"></div>
+            <div class="gallery-image-placeholder"></div>
+            <div class="gallery-image-placeholder"></div>
+            <div class="gallery-image-placeholder"></div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <img class="footer-mark" src="../assets/logo-mark.png" alt="Goncz Gaming">
+    </footer>
+
     <script src="../data/games.js"></script>
     <script src="../js/game-page.js"></script>
 </body>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>GAME NAME Devlog - Goncz Gaming</title>
+    <title>News - Goncz Gaming</title>
     <link rel="icon" type="image/png" href="../assets/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,8 +13,8 @@
     <header class="banner">
         <nav class="banner-nav">
             <a href="../about.html" class="about-link">About</a>
-            <a href="../../donate.html" class="donate-nav-link">Donate</a>
             <a href="#" class="steam-dev-link">Steam Developer Page</a>
+            <a href="../donate.html" class="donate-nav-link">Donate</a>
         </nav>
         <a href="../index.html" class="banner-home-link">
             <img class="banner-logo" src="../assets/logo-wordmark.png" alt="Goncz Gaming — developing games for a hobby">
@@ -22,16 +22,19 @@
     </header>
 
     <header class="sub-banner">
-        <h1><a href="../../games/GAME-SLUG.html" class="title-game-link">GAME NAME</a> Devlog Archive</h1>
+        <h1 id="news-entry-title">News</h1>
     </header>
 
-    <section class="devlog-archive" id="devlog-list">
-    </section>
+    <article class="news-entry-page">
+        <p class="news-date" id="news-entry-date"></p>
+        <div id="news-entry-body"></div>
+        <p class="news-entry-back"><a href="../index.html">&#8592; Back to all news</a></p>
+    </article>
+
     <footer class="site-footer">
         <img class="footer-mark" src="../assets/logo-mark.png" alt="Goncz Gaming">
     </footer>
 
-
-    <script src="../../js/devlog-archive.js"></script>
+    <script src="../js/news-entry.js"></script>
 </body>
 </html>
