@@ -21,8 +21,6 @@ async function buildDevlogArchive() {
         entries.push(entry);
     }
 
-    entries.sort((a, b) => String(b.date).localeCompare(String(a.date)));
-
     const container = document.getElementById("devlog-list");
 
     entries.forEach((entryData, index) => {

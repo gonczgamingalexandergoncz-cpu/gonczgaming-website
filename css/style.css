@@ -1,836 +1,232 @@
-:root {
-    --ink: #070809;
-    --panel: #0e1011;
-    --panel-2: #14181a;
-    --edge: #2a3320;
-    --edge-hot: #6d8a1f;
-    --green: #a6c62e;
-    --green-bright: #cbe45a;
-    --green-deep: #6f8f1c;
-    --red: #e01018;
-    --red-glow: rgba(224, 16, 24, 0.55);
-    --text: #cfd3c8;
-    --muted: #8f958a;
-    --font-display: "Grenze Gotisch", "Trajan Pro", Georgia, serif;
-    --font-body: "Barlow", "Segoe UI", system-ui, sans-serif;
-}
-
-* { box-sizing: border-box; }
-
 body {
-    margin: 0;
-    background:
-        radial-gradient(900px 500px at 50% -120px, rgba(166, 198, 46, 0.10), transparent 70%),
-        radial-gradient(700px 400px at 50% 100%, rgba(224, 16, 24, 0.08), transparent 70%),
-        linear-gradient(160deg, #070809, #101314 55%, #070809);
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #0d0d0d);
     background-attachment: fixed;
     min-height: 100vh;
-    color: var(--text);
-    font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.6;
-    text-wrap: pretty;
 }
-
-a { color: var(--green); }
-a:hover { color: var(--green-bright); }
-:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
-::selection { background: rgba(166, 198, 46, 0.3); }
-
-/* ---------- banner ---------- */
 
 .banner {
     width: 100%;
-    padding: 6px 20px 26px;
+    padding: 60px 20px;
     text-align: center;
-    background:
-        radial-gradient(600px 240px at 50% 40%, rgba(224, 16, 24, 0.14), transparent 70%),
-        #000000;
-    border-bottom: 1px solid var(--edge);
-    box-shadow: 0 1px 0 rgba(166, 198, 46, 0.25), 0 18px 40px rgba(0, 0, 0, 0.6);
+    background-color: #000000;
+    border-bottom: 2px solid #2e7d32;
     position: relative;
 }
 
-.banner-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    max-width: 1180px;
-    margin: 0 auto -46px;
+.banner h1 {
+    color: #4caf50;
+    font-size: 3rem;
+    margin: 0;
+    text-shadow: 4px 4px 12px #ff0000;
+}
+
+.banner p {
+    color: #4caf50;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    text-shadow: 2px 2px 8px #ff0000;
 }
 
 .banner-home-link {
-    display: inline-block;
-    line-height: 0;
-}
-
-.banner-logo {
-    width: min(560px, 82vw);
-    height: auto;
-    display: block;
-    filter: drop-shadow(0 0 26px var(--red-glow));
-    transition: filter 160ms ease, transform 160ms ease;
-}
-
-.banner-home-link:hover .banner-logo {
-    filter: drop-shadow(0 0 34px rgba(224, 16, 24, 0.85));
-    transform: translateY(-1px);
-}
-
-.banner-nav .steam-dev-link { margin-left: auto; }
-
-.about-link,
-.donate-nav-link,
-.steam-dev-link {
-    font-family: var(--font-display);
-    font-size: 1rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--green);
+    color: inherit;
     text-decoration: none;
-    border: 1px solid var(--edge-hot);
-    background: linear-gradient(#101312, #07090a);
-    padding: 7px 16px;
-    border-radius: 2px;
 }
 
-.about-link:hover,
-.donate-nav-link:hover,
+.steam-dev-link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #4caf50;
+    text-decoration: none;
+    border: 1px solid #4caf50;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
 .steam-dev-link:hover {
-    color: var(--green-bright);
-    border-color: var(--green);
-    box-shadow: 0 0 14px rgba(224, 16, 24, 0.45);
+    background-color: #1a1a1a;
 }
-
-.about-link:active,
-.donate-nav-link:active,
-.steam-dev-link:active {
-    color: var(--green-deep);
-    box-shadow: none;
-}
-
-/* ---------- sub banner ---------- */
 
 .sub-banner {
     width: 100%;
-    padding: 34px 20px 26px;
+    padding: 30px 20px;
     text-align: center;
-    background: transparent;
-    border-bottom: none;
+    background-color: #000000;
+    border-bottom: 2px solid #2e7d32;
 }
 
 .sub-banner h1 {
-    font-family: var(--font-display);
-    font-weight: 500;
-    color: var(--green);
-    font-size: clamp(2rem, 5vw, 3rem);
-    letter-spacing: 0.02em;
+    color: #4caf50;
+    font-size: 2rem;
     margin: 0;
-    text-shadow: 0 0 18px rgba(224, 16, 24, 0.55);
-}
-
-.sub-banner h1::before,
-.sub-banner h1::after {
-    content: "";
-    display: inline-block;
-    vertical-align: middle;
-    width: clamp(28px, 8vw, 72px);
-    height: 1px;
-    margin: 0 18px;
-    background: linear-gradient(90deg, transparent, var(--edge-hot), transparent);
-}
-
-/* ---------- development disclaimer ---------- */
-
-.dev-disclaimer {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 42px 20px 0;
-    text-align: center;
-}
-
-.dev-disclaimer p {
-    margin: 0;
-    color: var(--muted);
-    font-size: 1rem;
-    line-height: 1.7;
-}
-
-.dev-disclaimer strong {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 1.15rem;
-    letter-spacing: 0.04em;
-    color: var(--green);
-    text-shadow: 0 0 14px rgba(224, 16, 24, 0.45);
-}
-
-/* ---------- games grid ---------- */
-
-.home-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 320px;
-    align-items: start;
-    gap: 40px;
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 46px 24px 70px;
-}
-
-@media (max-width: 900px) {
-    .home-layout {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 28px;
-    }
+    text-shadow: 3px 3px 8px #ff0000;
 }
 
 #games-grid {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 16px;
-    padding: 0;
-}
-
-@media (max-width: 1100px) {
-    #games-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-
-@media (max-width: 600px) {
-    #games-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-/* ---------- news panel ---------- */
-
-.news-panel {
     display: flex;
-    flex-direction: column;
-    gap: 22px;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 40px 20px;
 }
-
-.news-heading {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 1.6rem;
-    letter-spacing: 0.03em;
-    color: var(--green);
-    margin: 0;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--edge);
-    text-shadow: 0 0 16px rgba(224, 16, 24, 0.45);
-}
-
-#news-list {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.news-item {
-    display: block;
-    text-decoration: none;
-    padding: 14px 16px;
-    margin: -14px -16px;
-    border: 1px solid transparent;
-    border-radius: 3px;
-    transition: border-color 160ms ease, background 160ms ease;
-}
-
-.news-item:hover {
-    border-color: var(--edge);
-    background: rgba(166, 198, 46, 0.05);
-}
-
-.news-item h3 {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 1.2rem;
-    letter-spacing: 0.02em;
-    color: var(--green);
-    margin: 0 0 4px;
-}
-
-.news-date {
-    margin: 0 0 8px;
-    color: var(--muted);
-    font-size: 0.82rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.news-body,
-.news-empty {
-    margin: 0;
-    color: var(--text);
-    font-size: 0.98rem;
-    line-height: 1.65;
-}
-
-.news-empty { color: var(--muted); }
 
 .game-card {
-    background: linear-gradient(#0f1213, #070809);
-    border: 1px solid var(--edge);
-    border-radius: 3px;
+    background-color: #000000;
+    border: 1px solid #2e7d32;
+    border-radius: 8px;
+    width: 280px;
     overflow: hidden;
     text-decoration: none;
     display: block;
-    transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 }
-
-.game-card:hover {
-    border-color: var(--edge-hot);
-    box-shadow: 0 0 0 1px rgba(166, 198, 46, 0.25), 0 14px 34px rgba(0, 0, 0, 0.7), 0 0 26px rgba(224, 16, 24, 0.25);
-    transform: translateY(-3px);
-}
-
-.game-card:active { transform: none; }
 
 .game-card .card-image-placeholder {
     width: 100%;
-    aspect-ratio: 3 / 2;
-    height: auto;
-    background:
-        radial-gradient(220px 120px at 50% 60%, rgba(166, 198, 46, 0.10), transparent 70%),
-        #101314;
-    border-bottom: 1px solid var(--edge);
+    height: 160px;
+    background-color: #1a1a1a;
 }
 
 .game-card h2 {
-    font-family: var(--font-display);
-    font-weight: 500;
-    color: var(--green);
-    font-size: 1.1rem;
-    line-height: 1.25;
-    letter-spacing: 0.02em;
+    color: #4caf50;
     text-align: center;
-    padding: 10px 8px 12px;
+    padding: 15px;
     margin: 0;
 }
 
-.news-item:hover h3 { color: var(--green-bright); }
-
-.news-more {
-    display: block;
-    margin-top: 8px;
-    font-family: var(--font-display);
-    font-size: 0.95rem;
-    letter-spacing: 0.04em;
-    color: var(--green-deep);
-}
-
-.news-item:hover .news-more { color: var(--green); }
-
-.news-entry-page {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 20px 24px 70px;
-    font-size: 1.08rem;
-    line-height: 1.75;
-}
-
-.news-entry-page p { margin: 0 0 22px; }
-
-.news-entry-back {
-    margin-top: 34px;
-    font-family: var(--font-display);
-    letter-spacing: 0.04em;
-}
-
-/* ---------- more images ---------- */
-
-.more-images {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 10px 24px 70px;
-    text-align: center;
-}
-
-.more-images h2 {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 1.9rem;
-    letter-spacing: 0.02em;
-    color: var(--green);
-    margin: 0 0 22px;
-    text-shadow: 0 0 16px rgba(224, 16, 24, 0.45);
-}
-
-.more-images-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-}
-
-.more-images-grid .gallery-image-placeholder {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 3 / 2;
-}
-
-/* ---------- game page ---------- */
-
 .game-hero {
-    padding: 10px 20px 0;
+    padding: 20px;
     display: flex;
     justify-content: center;
 }
 
 .hero-image-placeholder {
     width: 100%;
-    max-width: 860px;
-    height: 320px;
-    background:
-        radial-gradient(400px 200px at 50% 60%, rgba(166, 198, 46, 0.08), transparent 70%),
-        #101314;
-    border: 1px solid var(--edge);
-    border-radius: 3px;
+    max-width: 800px;
+    height: 300px;
+    background-color: #1a1a1a;
+    border: 1px solid #2e7d32;
+    border-radius: 8px;
 }
 
 .game-description {
-    max-width: 760px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 34px 20px;
-    color: var(--text);
+    padding: 20px;
+    color: #cccccc;
     text-align: center;
-    font-size: 1.05rem;
 }
 
 .game-gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 15px;
     justify-content: center;
-    padding: 10px 20px;
+    padding: 20px;
 }
 
 .gallery-image-placeholder {
-    width: 240px;
-    height: 150px;
-    background: #101314;
-    border: 1px solid var(--edge);
-    border-radius: 3px;
+    width: 220px;
+    height: 140px;
+    background-color: #1a1a1a;
+    border: 1px solid #2e7d32;
+    border-radius: 8px;
 }
 
 .game-buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 15px;
     justify-content: center;
-    padding: 44px 20px;
+    padding: 30px 20px;
 }
 
 .btn {
     display: inline-block;
-    font-family: var(--font-display);
-    font-size: 1.05rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 12px 26px;
-    background: linear-gradient(#111514, #07090a);
-    color: var(--green);
-    border: 1px solid var(--edge-hot);
-    border-radius: 2px;
+    padding: 12px 24px;
+    background-color: #000000;
+    color: #4caf50;
+    border: 1px solid #4caf50;
+    border-radius: 6px;
     text-decoration: none;
-}
-
-.btn:hover {
-    color: var(--green-bright);
-    border-color: var(--green);
-    box-shadow: 0 0 16px rgba(224, 16, 24, 0.45);
-}
-
-.btn:active {
-    color: var(--green-deep);
-    box-shadow: none;
-}
-
-.btn-steam,
-.btn-donate {
-    border-color: rgba(224, 16, 24, 0.6);
+    font-weight: bold;
 }
 
 .game-devlog {
-    max-width: 760px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 10px 20px 70px;
-    color: var(--text);
+    padding: 20px 20px 60px;
+    color: #cccccc;
     text-align: center;
 }
 
 .game-devlog h2 {
-    font-family: var(--font-display);
-    font-weight: 500;
-    color: var(--green);
-    font-size: 1.9rem;
-    letter-spacing: 0.02em;
-    margin-bottom: 14px;
+    color: #4caf50;
 }
 
-.latest-devlog-meta {
-    color: var(--muted);
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin: 0 0 10px;
+.game-devlog a {
+    color: #4caf50;
 }
-
-.devlog-entry-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    justify-content: center;
-    padding-top: 18px;
-}
-
-.devlog-entry-gallery img {
-    max-width: 240px;
-    border: 1px solid var(--edge);
-    border-radius: 3px;
-}
-
-/* ---------- linked game name in devlog title ---------- */
-
-.title-game-link {
-    color: inherit;
-    text-decoration: none;
-}
-
-.title-game-link:hover {
-    color: var(--green-bright);
-    text-shadow: 0 0 20px rgba(224, 16, 24, 0.7);
-}
-
-.title-game-link:active { color: var(--green-deep); }
-
-/* ---------- signup forms ---------- */
-
-.signup-forms {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 26px;
-    justify-content: center;
-    align-items: flex-start;
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 20px 60px;
-}
-
-.signup-form {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    flex: 1 1 320px;
-    max-width: 380px;
-    padding: 24px;
-    background: linear-gradient(#0f1213, #080a0b);
-    border: 1px solid var(--edge);
-    border-radius: 3px;
-}
-
-.signup-form h2 {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 1.5rem;
-    letter-spacing: 0.02em;
-    color: var(--green);
-    margin: 0;
-}
-
-.signup-note {
-    margin: 0;
-    color: var(--muted);
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-
-.signup-form label {
-    font-size: 0.82rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 6px;
-}
-
-.signup-input {
-    font-family: var(--font-body);
-    font-size: 1rem;
-    color: var(--text);
-    background: #07090a;
-    border: 1px solid var(--edge);
-    border-radius: 2px;
-    padding: 10px 12px;
-}
-
-.signup-textarea {
-    resize: vertical;
-    min-height: 78px;
-    line-height: 1.5;
-}
-
-.signup-honeypot {
-    position: absolute;
-    left: -9999px;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-}
-
-.req {
-    text-transform: none;
-    letter-spacing: 0.02em;
-    color: #5d6259;
-}
-
-.signup-input::placeholder { color: #5d6259; }
-
-.signup-input:focus {
-    outline: none;
-    border-color: var(--edge-hot);
-    box-shadow: 0 0 12px rgba(166, 198, 46, 0.2);
-}
-
-.signup-choice {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    border: none;
-    margin: 10px 0 0;
-    padding: 0;
-}
-
-.signup-choice legend {
-    padding: 0;
-    font-size: 0.82rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-}
-
-.signup-form label.signup-radio {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    margin: 0;
-    font-family: var(--font-body);
-    font-size: 1rem;
-    letter-spacing: normal;
-    text-transform: none;
-    color: var(--text);
-    cursor: pointer;
-}
-
-.signup-form label.signup-radio input {
-    width: 16px;
-    height: 16px;
-    margin: 0;
-    accent-color: var(--green);
-    cursor: pointer;
-}
-
-.signup-form .btn {
-    margin-top: 8px;
-    text-align: center;
-    cursor: pointer;
-    font-family: var(--font-display);
-}
-
-.signup-form .btn:disabled {
-    cursor: default;
-    opacity: 0.75;
-    box-shadow: none;
-}
-
-.signup-status {
-    margin: 0;
-    min-height: 0;
-    font-size: 0.92rem;
-    line-height: 1.5;
-}
-
-.signup-status:empty { display: none; }
-
-.signup-status.is-pending { color: var(--muted); }
-
-.signup-status.is-success {
-    color: var(--green-bright);
-    font-family: var(--font-display);
-    font-size: 1.05rem;
-    letter-spacing: 0.03em;
-}
-
-.signup-status.is-error { color: #ef6a6f; }
-
-.signup-form.is-sent {
-    border-color: var(--edge-hot);
-    box-shadow: 0 0 0 1px rgba(166, 198, 46, 0.25), 0 0 22px rgba(166, 198, 46, 0.14);
-}
-
-.signup-form.is-sent .signup-input,
-.signup-form.is-sent label,
-.signup-form.is-sent .signup-choice,
-.signup-form.is-sent .signup-note {
-    display: none;
-}
-
-/* ---------- donate ---------- */
-
-.donate-layout {
-    display: grid;
-    grid-template-columns: 220px minmax(0, 1fr);
-    align-items: start;
-    gap: 44px;
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 20px 24px 30px;
-}
-
-@media (max-width: 820px) {
-    .donate-layout {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 24px;
-    }
-}
-
-.donate-games-heading {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 1.35rem;
-    letter-spacing: 0.03em;
-    color: var(--green);
-    margin: 0 0 12px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--edge);
-}
-
-.donate-game-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 0;
-    padding: 0;
-}
-
-.donate-game-list li {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    letter-spacing: 0.02em;
-    color: var(--text);
-}
-
-.donate-intro {
-    max-width: 720px;
-    padding: 0 0 10px;
-    font-size: 1.08rem;
-    line-height: 1.75;
-}
-
-.donate-intro p { margin: 0 0 22px; }
-
-.donate-choices {
-    padding: 10px 0 30px;
-}
-
-.donate-choices .game-buttons {
-    justify-content: flex-start;
-    padding: 0;
-}
-
-.donate-heading {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 1.9rem;
-    letter-spacing: 0.02em;
-    color: var(--green);
-    margin: 0 0 10px;
-    text-shadow: 0 0 16px rgba(224, 16, 24, 0.45);
-}
-
-.donate-note {
-    color: var(--muted);
-    font-size: 0.98rem;
-}
-
-/* ---------- devlog archive ---------- */
 
 .devlog-archive {
-    max-width: 820px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 20px 20px 80px;
+    padding: 40px 20px;
 }
 
 .devlog-entry {
-    border: 1px solid var(--edge);
-    border-radius: 3px;
-    margin-bottom: 14px;
+    border: 1px solid #2e7d32;
+    border-radius: 6px;
+    margin-bottom: 15px;
     overflow: hidden;
-    background: linear-gradient(#0f1213, #080a0b);
 }
 
 .devlog-entry-header {
     width: 100%;
     text-align: left;
-    background: transparent;
-    color: var(--green);
+    background-color: #000000;
+    color: #4caf50;
     border: none;
-    padding: 16px 20px;
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    letter-spacing: 0.02em;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
     cursor: pointer;
 }
 
 .devlog-entry-header:hover {
-    background: rgba(166, 198, 46, 0.06);
-    color: var(--green-bright);
+    background-color: #1a1a1a;
 }
 
-.devlog-entry-header:active { color: var(--green-deep); }
-
 .devlog-entry-body {
-    background: #0a0c0d;
-    border-top: 1px solid var(--edge);
-    color: var(--text);
+    background-color: #0d0d0d;
+    color: #cccccc;
     padding: 20px;
 }
 
-/* ---------- about ---------- */
-
 .about-content {
-    max-width: 720px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 20px 20px 80px;
-    color: var(--text);
-    font-size: 1.08rem;
-    line-height: 1.75;
+    padding: 40px 20px;
+    color: #cccccc;
+    line-height: 1.6;
 }
 
-.about-content p { margin-bottom: 22px; }
-
-/* ---------- footer ---------- */
-
-.site-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    padding: 18px 20px 22px;
-    border-top: 1px solid var(--edge);
-    background: rgba(0, 0, 0, 0.5);
-    text-align: center;
+.about-content p {
+    margin-bottom: 20px;
 }
 
-.footer-mark {
-    width: min(340px, 70vw);
-    height: auto;
-    filter: drop-shadow(0 0 22px rgba(224, 16, 24, 0.45));
-}
-
-.site-footer p {
-    margin: 0;
-    color: var(--muted);
+.about-link {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #4caf50;
+    text-decoration: none;
+    border: 1px solid #4caf50;
+    padding: 8px 14px;
+    border-radius: 6px;
     font-size: 0.9rem;
-    letter-spacing: 0.04em;
+}
+
+.about-link:hover {
+    background-color: #1a1a1a;
 }
